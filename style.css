@@ -1,0 +1,100 @@
+:root {
+  --cream: #FFF5EE;
+  --navy: #0A2342;
+  --coral: #FF654F;
+  --blue: #4E9AF1;
+  --muted: #4A5D78;
+  --line: #F0DCCD;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--navy);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a { color: var(--coral); text-underline-offset: 2px; }
+a:hover { color: #E24E39; }
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+header.site {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+header.site a { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); }
+header.site img { width: 40px; height: 40px; border-radius: 10px; }
+header.site span { font-weight: 800; font-size: 20px; letter-spacing: -0.3px; }
+
+h1 { font-size: 32px; line-height: 1.15; letter-spacing: -0.8px; margin: 8px 0 12px; }
+h2 { font-size: 21px; line-height: 1.25; margin: 32px 0 8px; }
+h3 { font-size: 18px; margin: 24px 0 6px; }
+p { margin: 0 0 14px; }
+ul { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+strong { font-weight: 700; }
+
+.effective { color: var(--muted); font-size: 15px; }
+
+/* Home */
+.hero { text-align: center; padding: 32px 0 16px; }
+.hero img { width: 120px; height: 120px; border-radius: 28px; box-shadow: 0 12px 32px rgba(255, 101, 79, 0.25); }
+.hero h1 { font-size: 40px; margin-top: 20px; }
+.pitch { font-size: 20px; color: var(--navy); max-width: 460px; margin: 0 auto 20px; }
+.badge {
+  display: inline-block;
+  background: var(--coral);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 999px;
+}
+.accent { color: var(--blue); }
+
+.links { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 12px; }
+.links a {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 700;
+}
+.links a span { display: block; font-weight: 400; color: var(--muted); font-size: 15px; }
+
+/* Support */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  margin: 16px 0 24px;
+}
+.card .email { font-size: 20px; font-weight: 700; word-break: break-all; }
+
+footer.site {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 15px;
+  text-align: center;
+}
+footer.site nav a { margin: 0 6px; }
