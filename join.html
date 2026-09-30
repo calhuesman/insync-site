@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Join me on InSync</title>
+<meta name="description" content="You've been invited to InSync: pick cravings together, match, cook together.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFF5EE">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .join { text-align: center; padding: 8px 0 24px; }
+  .join h1 { margin: 12px 0 4px; }
+  .join .lead { color: var(--muted); margin: 0 0 20px; }
+  .code {
+    display: inline-block; font-size: 44px; font-weight: 800; letter-spacing: 8px;
+    padding: 14px 20px 14px 28px; border-radius: 18px; background: #fff;
+    border: 2px solid var(--line); color: var(--navy); margin: 4px 0 8px;
+    font-variant-numeric: tabular-nums;
+  }
+  .hint { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+  .btn {
+    display: block; max-width: 320px; margin: 0 auto 12px; padding: 16px 20px;
+    border-radius: 999px; font-weight: 700; text-decoration: none; font-size: 17px;
+  }
+  .btn.primary { background: var(--coral); color: #fff; }
+  .btn.primary:hover { color: #fff; background: #E24E39; }
+  .btn.secondary { border: 2px solid var(--navy); color: var(--navy); }
+  .steps { text-align: left; max-width: 360px; margin: 24px auto 0; color: var(--muted); font-size: 15px; }
+  .bad { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a href="index.html"><img src="logo.png" alt="InSync logo" width="40" height="40"><span>InSync</span></a></header>
+<main class="join">
+  <img src="logo.png" alt="" width="96" height="96">
+
+  <div id="ok">
+    <h1>You're invited to InSync</h1>
+    <p class="lead">Let's figure out what to eat together.</p>
+    <div class="code" id="code" aria-label="Invite code"></div>
+    <p class="hint">Your invite code</p>
+    <a class="btn primary" href="https://apps.apple.com/app/id6815504220">Get InSync</a>
+    <a class="btn secondary" id="open" href="insync://join">Already have it? Open InSync</a>
+    <ol class="steps">
+      <li>Get InSync from the App Store.</li>
+      <li>Open it and tap "I have an invite code".</li>
+      <li>Enter the code above. You'll see who invited you before you join.</li>
+    </ol>
+  </div>
+
+  <div class="bad" id="bad">
+    <h1>This invite link looks broken</h1>
+    <p class="lead">Ask your partner to send a new invite from InSync.</p>
+    <a class="btn primary" href="https://apps.apple.com/app/id6815504220">Get InSync</a>
+  </div>
+</main>
+<footer class="site">
+<nav><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></nav>
+<p>© 2026 InSync</p>
+</footer>
+</div>
+<script>
+  // Codes are 6 characters: A-H, J-N, P-Z and 2-9 (no I, O, 0 or 1).
+  var raw = new URLSearchParams(location.search).get('code') || '';
+  var code = raw.toUpperCase().replace(/\s+/g, '');
+  if (/^[A-HJ-NP-Z2-9]{6}$/.test(code)) {
+    document.getElementById('code').textContent = code;
+    document.getElementById('open').href = 'insync://join?code=' + code;
+  } else {
+    document.getElementById('ok').style.display = 'none';
+    document.getElementById('bad').style.display = 'block';
+  }
+</script>
+</body>
+</html>
